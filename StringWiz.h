@@ -51,7 +51,14 @@ char* str_substr(const char* str, int start, int length) {
     return result;
 }
 
-/* Function to replace occurrences of a substring in a string */
+/*
+ * Function to create a substring from a string
+ *
+ * @param str Pointer to the original string.
+ * @param old_sub pointer to old sub string.
+ * @param new_sub pointer to new sub string.
+ * @return A pointer to the result.
+ */
 char* str_replace(const char* str, const char* old_sub, const char* new_sub) {
     char* result;
     char* ins;
@@ -83,7 +90,12 @@ char* str_replace(const char* str, const char* old_sub, const char* new_sub) {
     return result;
 }
 
-/* Function to convert a string to uppercase */
+/*
+ * Function to create a substring from a string
+ *
+ * @param str Pointer to the string.
+ * @return does not return anything
+ */
 void str_to_upper(char* str) {
     while (*str) {
         *str = toupper(*str);
@@ -91,7 +103,12 @@ void str_to_upper(char* str) {
     }
 }
 
-/* Function to convert a string to lowercase */
+/*
+ * Function to create a substring from a string
+ *
+ * @param str Pointer to the string.
+ * @return void does not return anything
+ */
 void str_to_lower(char* str) {
     while (*str) {
         *str = tolower(*str);
@@ -99,7 +116,13 @@ void str_to_lower(char* str) {
     }
 }
 
-/* Function to perform case-insensitive string comparison */
+/*
+ * Function to create a substring from a string
+ *
+ * @param str1 Pointer to the first string.
+ * @param str2 Pointer to the second string
+ * @return int look README.md 
+ */
 int str_cmp_ignore_case(const char* str1, const char* str2) {
     while (*str1 && *str2 && tolower(*str1) == tolower(*str2)) {
         str1++;
@@ -108,7 +131,13 @@ int str_cmp_ignore_case(const char* str1, const char* str2) {
     return tolower(*str1) - tolower(*str2);
 }
 
-/* Function to find the first occurrence of a substring in a string */
+/*
+ * Function to find first occurrence of a substring in a string
+ *
+ * @param str Pointer to the string.
+ * @param sub Pointer to substring to find
+ * @return -1 if not found
+ */
 int str_find(const char* str, const char* sub) {
     char* ptr = strstr(str, sub);
     if (ptr == NULL) {
@@ -117,7 +146,12 @@ int str_find(const char* str, const char* sub) {
     return ptr - str;
 }
 
-/* Function to find the last occurrence of a substring in a string */
+/* 
+ * Function to find the last occurrence of a substring in a string 
+ * @param str Pointer to the string.
+ * @param sub Pointer to the substring
+ * @return -1 if not found
+ */
 int str_rfind(const char* str, const char* sub) {
     char* ptr = strstr(str, sub);
     char* last_ptr = NULL;
@@ -131,31 +165,51 @@ int str_rfind(const char* str, const char* sub) {
     return last_ptr - str;
 }
 
-/* Function to convert a string to an integer */
+/* 
+ * Function to convert a string to an integer 
+ * @param str Pointer to the string
+ * @return the converted integer
+*/
 int str_to_int(const char* str) {
     return atoi(str);
 }
 
-/* Function to convert a string to a float */
+/* 
+ * Function to convert a string to an floating point 
+ * @param str Pointer to the string
+ * @return the converted float
+*/
 float str_to_float(const char* str) {
     return atof(str);
 }
 
-/* Function to convert an integer to a string */
+/* 
+ * Function to convert a integer to a string
+ * @param num integer number to convert to string
+ * @return returns the converted string
+*/
 char* int_to_str(int num) {
     char* str = (char*)malloc(12 * sizeof(char)); // Maximum length of an integer string is 11 characters + 1 for null terminator
     sprintf(str, "%d", num);
     return str;
 }
 
-/* Function to convert a float to a string */
+/* 
+ * Function to convert a string to an integer 
+ * @param num float number to convert to str
+ * @return the converted string
+*/
 char* float_to_str(float num) {
     char* str = (char*)malloc(32 * sizeof(char)); // Maximum length of a float string is 31 characters + 1 for null terminator
     sprintf(str, "%f", num);
     return str;
 }
 
-/* Function to reverse a string */
+/* 
+ * Function to reverse a string 
+ * @param str Pointer to the string
+ * @return void does not return anything
+*/
 void str_reverse(char* str) {
     int length = strlen(str);
     for (int i = 0; i < length / 2; i++) {
@@ -165,7 +219,11 @@ void str_reverse(char* str) {
     }
 }
 
-/* Function to trim whitespace characters from the beginning and end of a string */
+/* 
+ * Function to trim whitespace characters from the beginning and end of a string
+ * @param str Pointer to the string
+ * @return void does not return anything
+*/
 void str_trimWHS(char* str) {
     int length = strlen(str);
     int start = 0;
@@ -181,6 +239,13 @@ void str_trimWHS(char* str) {
 }
 
 /* Function to format a string */
+
+/* 
+ * Function to format a string
+ * @param str Pointer to the string
+ * @param ... variadic pack for n arguments (string)
+ * @return formatted string
+*/
 char* str_format(const char* format, ...) {
     va_list args;
     va_start(args, format);
