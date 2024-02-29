@@ -259,3 +259,40 @@ char* str_format(const char* format, ...) {
     
     return str;
 }
+/* Function that returns the count of number characters in the string */
+int str_num(char str[50])
+{
+    int count = 0;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (isdigit(str[i])) {
+            count++;
+        }
+    }
+    return count;
+}
+
+/* Function that returns the count of vowels in the string */
+
+int str_vow(char str[50])
+{
+    int count = 0;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u' || str[i]=='A' || str[i]=='E' || str[i]=='I' || str[i]=='O' || str[i]=='U') {
+            count++;
+        }
+    }
+    return count;
+}
+/* Function that returns the count of consonants in the string */
+
+int str_conso(char str[50])
+{
+    int count = 0;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u' || str[i]=='A' || str[i]=='E' || str[i]=='I' || str[i]=='O' || str[i]=='U') {
+            count++;
+        }
+    }
+    int p = strlen(str) - count;
+    return p;
+}
