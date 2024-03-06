@@ -259,8 +259,11 @@ char* str_format(const char* format, ...) {
     
     return str;
 }
-/* Function that returns the count of number characters in the string */
-int str_num(char str[50])
+/* Function that returns the count of number digits in the string 
+ * @param str Pointer to the string
+ * @return number of digits
+*/
+int str_num(const char *str)
 {
     int count = 0;
     for (int i = 0; str[i] != '\0'; i++) {
@@ -271,9 +274,11 @@ int str_num(char str[50])
     return count;
 }
 
-/* Function that returns the count of vowels in the string */
-
-int str_vow(char str[50])
+/* Function that returns the count of vowels in the string
+ * @param str Pointer to the string
+ * @return number of vowels
+*/
+int str_vow(const char *str)
 {
     int count = 0;
     for (int i = 0; str[i] != '\0'; i++) {
@@ -283,9 +288,12 @@ int str_vow(char str[50])
     }
     return count;
 }
-/* Function that returns the count of consonants in the string */
+/* Function that returns the count of consonants in the string
+ * @param str Pointer to the string
+ * @return number of consonants
+*/
 
-int str_conso(char str[50])
+int str_conso(const char *str)
 {
     int count = 0;
     for (int i = 0; str[i] != '\0'; i++) {
