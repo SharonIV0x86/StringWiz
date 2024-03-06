@@ -292,7 +292,6 @@ int str_vow(const char *str)
  * @param str Pointer to the string
  * @return number of consonants
 */
-
 int str_conso(const char *str)
 {
     int count = 0;

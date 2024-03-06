@@ -284,3 +284,43 @@ char* formatted = str_format("%s %d %.2f", "Hello", 123, 3.14159);
 printf("%s\n", formatted); // Output: Hello 123 3.14
 str_free(formatted);
 ```
+## int str_num(const char *str)
+Functions that returns the count of vowels in the string.
+
+    Parameters:
+        str: The string to find numbers in.
+    Returns:
+        Count of numbers in the string.
+Usage:
+```c
+char strin = "This is a test string 1234";
+int num = num_str(strin);
+printf("Count of numbers: %d", num);
+```
+
+## int str_vow(const char *str)
+Function that returns the vowels in the string
+
+    Parameters:
+        str: The string to find vowels in.
+    Returns:
+        Count of vowels in the string.
+Usage:
+```c
+char strin = "This is a test string 1234";
+int vowels = str_vow(strin);
+```
+
+## str_conso(const char *str)
+Function that returns the count of consonants in the string.
+
+    Parameters:
+        str: The string to find consonants in.
+    Returns:
+        Count of number of consonants in the string.
+
+Usage:
+```c
+char strin = "This is a test string 1235";
+int consonants = str_conso(strin);
+```
