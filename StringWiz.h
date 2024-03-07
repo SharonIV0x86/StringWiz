@@ -303,3 +303,18 @@ int str_conso(const char *str)
     int p = strlen(str) - count;
     return p;
 }
+
+/* Function that returns the hash code of a string,
+ * similar to hashcode() in Java, uses a rolling hash
+ * @param str Pointer to the string
+ * @return integer value representing the hashcode of the string
+*/
+int str_hashcode(const char* str){
+    int n = strlen(str), hash = 0;
+    int power = 1;
+    for (int i = n-1; i >= 0; i--) {
+        hash += str[i]*power;
+        power *= 31;
+    }
+    return hash;
+}
