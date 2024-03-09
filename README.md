@@ -13,15 +13,24 @@ The library for now is single-header only and does not require any prior set up.
 just download/copy and include the header file into your code and read the docs on usage.
 
 # Contributing
-Contributors are welcomed add more strings related functions, raise an issue about the about feature you want to add and wait for it to assigned to you. 
-- Edit your code open the PR, documentation will be taken care of. 
+Contributors are welcomed add more strings related functions.
+- Raise an issue about the about feature you want to add and wait for it to assigned to you.
+- Or check any existing issue if you want to work on them [Issues](https://github.com/SharonIV0x86/StringWiz/issues) 
+- Edit your code and open the PR, documentation will be taken care of. 
 - Make sure to add block comments above your function.
+
+### Requirements
+1. ) Basics of C.
+2. ) Basics of Git/Github and pull request, forking.
+3. ) Passing string to function and returning string from functions.
+4. ) Basic of header files in C. 
+
+If you have any questions you can reach out to me on [discord](https://discord.com/users/1011937653203144715) or raise an issue.
 
 ## Developer's Note
 This project represents a small endeavor aimed at enhancing skills in string manipulation and memory allocation. It's intended to be a long-term project with ongoing maintenance and the addition of new features. While there may be some inconsistencies in the current codebase, future updates will address these and introduce even more functionality.
 
 Your contributions and feedback are highly appreciated as they play a crucial role in shaping the evolution of this project. Thank you for your support and stay tuned for exciting new features in the future!
-For any questions you can reach out reach out to me on my discord Jasperr#6925 or jasperbrue
 
 ## Library Overview
 
@@ -42,7 +51,9 @@ For any questions you can reach out reach out to me on my discord Jasperr#6925 o
 - str_reverse(char* str)
 - str_trimWHS(char* str
 - str_format(const char* format, ...)
-
+- str_num(const char* str)
+- str_vow(const char* str)
+- str_conso(const char* str)
 # Documentation
 
 ## char* str_malloc(int size)
