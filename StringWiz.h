@@ -318,3 +318,78 @@ int str_hashcode(const char* str){
     }
     return hash;
 }
+
+/* Function that returns the length of the largest word in a string
+ * and also copies that word into another string
+ * @param destination Pointer to original String .
+ * @param source Pointer to other string that will contain the largest word.
+ * @return integer value representing the length of the largest word.
+*/
+int str_larg_word(char * p, char * r)
+{
+    char * i, * index;
+    int length = 0,largest = 0 ;
+    while(* p!='\0')
+    {
+        i=p;
+        for(; *p != '\0' && *p != ' '&&*p+1!=' ' ; )
+        {
+            length++;
+            p++;
+        }
+        if ( length > largest )
+        {
+            largest = length;
+            index = i;
+        }
+        p++;
+        length=0;
+    }
+    p=index;
+    i=p+largest;
+    while(p<i)
+    {
+        *r=*p;
+        p++;
+        r++;
+    }
+    return largest;   
+}
+
+/* Function that returns the length of the smalles word in a string
+ * and also copies that word into another string
+ * @param destination Pointer to original String .
+ * @param source Pointer to other string that will contain the smallest word.
+ * @return integer value representing the length of the smallest word.
+*/
+int str_small_word(char * p, char * r)
+{
+    char * i,* index;
+
+    int length = 0,smallest = 10000 ;
+    while(* p!='\0')
+    {
+        i=p;
+        for(; *p != '\0' && *p != ' '&&*p+1!=' ' ; )
+        {
+            length++;
+            p++;
+        }
+        if ( length < smallest && length!=0 )
+        {
+            smallest = length;
+            index = i;
+        }
+        p++;
+        length=0;
+    }
+    p=index;
+    i=p+smallest;
+    while(p<i)
+    {
+        *r=*p;
+        p++;
+        r++;
+    }
+    return smallest;   
+}
