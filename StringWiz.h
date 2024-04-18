@@ -3,6 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdarg.h>
+#include <time.h>
 
 /*
  * StringWiz: A versatile string utility library offering a comprehensive set of string manipulation functions.
@@ -410,4 +411,19 @@ void str_remove_whitespace(char str[]) {
         src++;
     }
     str[dst] = '\0'; 
+}
+
+/* * The 'str_shuffle' function shuffles the characters in the  string str using the Fisher-Yates algorithm.
+   * It seeds the random number generator using srand(time(NULL)) to ensure different seeds based on the current time,
+     which enhances the randomness of the shuffling process. */
+
+    void str_shuffle(char *str) {
+    int length = strlen(str);
+    srand(time(NULL));
+    for (int i = 0; i < length; i++) {
+        int j = rand() % length;
+        char temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+    }
 }
