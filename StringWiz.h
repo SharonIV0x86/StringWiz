@@ -393,3 +393,21 @@ int str_small_word(char * p, char * r)
     }
     return smallest;   
 }
+
+/*  * The `str_remove_whitespace` function directly modifies the original string to remove whitespaces.
+    * It iterates through the characters of the string, skipping whitespaces, and updates the string in place.
+    * After running the function, the modified string will have no whitespaces, and the original string will be altered.*/
+
+void str_remove_whitespace(char str[]) {
+    int src = 0;
+    int dst = 0;
+
+    while (str[src]) {
+        if (!isspace((unsigned char)str[src])) {
+            str[dst] = str[src];
+            dst++;
+        }
+        src++;
+    }
+    str[dst] = '\0'; 
+}
