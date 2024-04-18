@@ -394,22 +394,20 @@ int str_small_word(char * p, char * r)
     return smallest;   
 }
 
-// Function that optimally removes whitespaces from a `const char` string without modifying the original input.
-/* * The `str_remove_whitespace` function takes a `const char` array `str[]` and removes whitespaces from it, storing the result in a new array called `result`.
+/*  * The `str_remove_whitespace` function directly modifies the original string to remove whitespaces.
+    * It iterates through the characters of the string, skipping whitespaces, and updates the string in place.
+    * After running the function, the modified string will have no whitespaces, and the original string will be altered.*/
 
-* The function iterates through the input string, checks if each character is not a whitespace using the `isspace` function, and then copies non-whitespace characters to the `result` array. */
+void str_remove_whitespace(char str[]) {
+    int src = 0;
+    int dst = 0;
 
-
-void str_remove_whitespace(const char str[]) {
-    int i, j = 0;
-    char result[strlen(str) + 1]; // Create a new array to store the result
-
-    for (i = 0; str[i]; i++) {
-        if (!isspace(str[i])) {
-            result[j] = str[i];
-            j++;
+    while (str[src]) {
+        if (!isspace((unsigned char)str[src])) {
+            str[dst] = str[src];
+            dst++;
         }
+        src++;
     }
-    result[j] = '\0';
-    
+    str[dst] = '\0'; 
 }
