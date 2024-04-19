@@ -3,6 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdarg.h>
+#include <time.h>
 
 /*
  * StringWiz: A versatile string utility library offering a comprehensive set of string manipulation functions.
@@ -392,4 +393,27 @@ void str_remove_whitespace(char str[]) {
         src++;
     }
     str[dst] = '\0'; 
+}
+
+/**
+ * Shuffles the characters in a string, optionally preserving whitespace.
+ * 
+ * @param str The input string to be shuffled.
+ * @param shuffle_whitespace Flag to indicate whether to shuffle whitespace (1) or not (0).
+ * @return void
+ */
+
+   void str_shuffle(char *str, int shuffle_whitespace) {
+    int length = strlen(str);
+    srand(time(NULL));
+    for (int i = 0; i < length; i++) {
+        if (!isspace(str[i]) || shuffle_whitespace) {
+            int j = rand() % length;
+            if (!isspace(str[j]) || shuffle_whitespace) {
+                char temp = str[i];
+                str[i] = str[j];
+                str[j] = temp;
+            }
+        }
+    }
 }
