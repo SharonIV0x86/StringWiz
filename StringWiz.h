@@ -413,17 +413,25 @@ void str_remove_whitespace(char str[]) {
     str[dst] = '\0'; 
 }
 
-/* * The 'str_shuffle' function shuffles the characters in the  string str using the Fisher-Yates algorithm.
-   * It seeds the random number generator using srand(time(NULL)) to ensure different seeds based on the current time,
-     which enhances the randomness of the shuffling process. */
+/**
+ * Shuffles the characters in a string, optionally preserving whitespace.
+ * 
+ * @param str The input string to be shuffled.
+ * @param shuffle_whitespace Flag to indicate whether to shuffle whitespace (1) or not (0).
+ * @return void
+ */
 
-    void str_shuffle(char *str) {
+   void str_shuffle(char *str, int shuffle_whitespace) {
     int length = strlen(str);
     srand(time(NULL));
     for (int i = 0; i < length; i++) {
-        int j = rand() % length;
-        char temp = str[i];
-        str[i] = str[j];
-        str[j] = temp;
+        if (!isspace(str[i]) || shuffle_whitespace) {
+            int j = rand() % length;
+            if (!isspace(str[j]) || shuffle_whitespace) {
+                char temp = str[i];
+                str[i] = str[j];
+                str[j] = temp;
+            }
+        }
     }
 }
