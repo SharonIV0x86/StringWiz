@@ -1,3 +1,5 @@
+#ifndef STRINGWIZ_H
+#define STRINGWIZ_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -417,3 +419,7 @@ void str_remove_whitespace(char str[]) {
         }
     }
 }
+
+
+
+#endif /*STRINGWIZ_H*/
