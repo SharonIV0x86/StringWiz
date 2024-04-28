@@ -421,5 +421,30 @@ void str_remove_whitespace(char str[]) {
 }
 
 
+/* 
+ * Function to generate a random string 
+ * 
+ * @param length Length of the random string to be generated.
+ * @return Pointer to the generated random string 
+ * @note The caller is responsible for freeing the memory allocated for the random string.
+ */
+
+char* str_random(int length) {
+    const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    char* random_string = malloc((length + 1) * sizeof(char)); 
+    if (random_string == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(1);
+    }
+
+    srand(time(NULL)); 
+    for (int i = 0; i < length; i++) {
+        int index = rand() % (sizeof(charset) - 1); 
+        random_string[i] = charset[index]; 
+    }
+    random_string[length] = '\0'; 
+    return random_string;
+}
 
 #endif /*STRINGWIZ_H*/
+
