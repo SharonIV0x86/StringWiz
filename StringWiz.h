@@ -1,3 +1,5 @@
+#ifndef STRINGWIZ_H
+#define STRINGWIZ_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -460,3 +462,5 @@ char* str_random(int length) {
     random_string[length] = '\0'; 
     return random_string;
 }
+
+#endif /*STRINGWIZ_H*/
