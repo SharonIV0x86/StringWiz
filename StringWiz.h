@@ -222,25 +222,6 @@ void str_reverse(char* str) {
     }
 }
 
-/* 
- * Function to trim whitespace characters from the beginning and end of a string
- * @param str Pointer to the string
- * @return void does not return anything
-*/
-void str_trimWHS(char* str) {
-    int length = strlen(str);
-    int start = 0;
-    int end = length - 1;
-    while (isspace(str[start])) {
-        start++;
-    }
-    while (end > start && isspace(str[end])) {
-        end--;
-    }
-    str[end + 1] = '\0';
-    memmove(str, str + start, end - start + 2);
-}
-
 /* Function to format a string */
 
 /* 
@@ -397,10 +378,11 @@ int str_small_word(char * p, char * r)
     return smallest;   
 }
 
-/*  * The `str_remove_whitespace` function directly modifies the original string to remove whitespaces.
-    * It iterates through the characters of the string, skipping whitespaces, and updates the string in place.
-    * After running the function, the modified string will have no whitespaces, and the original string will be altered.*/
-
+/* 
+ * Function to trim whitespace characters from the beginning and end of a string
+ * @param str Pointer to the string
+ * @return void does not return anything
+*/
 void str_remove_whitespace(char str[]) {
     int src = 0;
     int dst = 0;
@@ -438,6 +420,7 @@ void str_remove_whitespace(char str[]) {
     }
 }
 
+
 /* 
  * Function to generate a random string 
  * 
@@ -464,3 +447,4 @@ char* str_random(int length) {
 }
 
 #endif /*STRINGWIZ_H*/
+
